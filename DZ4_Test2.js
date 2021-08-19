@@ -16,7 +16,7 @@ function Basket(){
         return this.goods.length;
     }
     this.addGood = function(good = {}){
-        if (good === {}) {console.log('Not good for add to basket!'); return this.getBasketSize}
+        if (!Object.keys(good).length ) {console.log('Not good for add to basket!'); return this.getBasketSize}
         return this.goods.push(good);
     } 
 }
@@ -25,5 +25,6 @@ let b = new Basket();
 let a =new Good('Apple', 10)
 b.addGood(a);
 b.addGood(new Good('banana',20));
+b.addGood();
 console.log(b);
 console.log(b.getTotalPrice());
