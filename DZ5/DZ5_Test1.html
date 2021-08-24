@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="mybody">
+    <script>
+        var style = document.createElement('style');
+        style.type = 'text/css';
+        style.innerHTML = '.myspan { border:1px solid black ;\
+        display: block}';
+        document.getElementsByTagName('head')[0].appendChild(style);
+
+        for (let i =0; i <= 7; i++){
+            var dd = document.createElement('div');
+            dd.innerHTML = 1+i+"";
+            dd.style.border = '1px solid black';
+            dd.style.display = 'inline';
+            mybody.appendChild(dd);
+        }
+//        alert(document.documentURI)
+    </script>    
+
+    
+</body>
+<div>Normal</div>
+<Span class="myspan">Lorem ipsum dolor sit amet.</Span>
+<Span class="myspan">Lorem ipsum dolor sit amet.</Span>
+<Span class="myspan">Lorem ipsum dolor sit amet.</Span>
+<Span class="myspan">Lorem ipsum dolor sit amet.</Span>
+<Span class="myspan">Lorem ipsum dolor sit amet.</Span>
+</html>
