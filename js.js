@@ -85,7 +85,7 @@ const map = {
             }
         }
     },
-
+    // Моя вставка
     render(snakePointsArray, foodPoint, wallPoint) {
         for (const cell of this.usedCells) {
             cell.className = 'cell';
@@ -110,9 +110,7 @@ const map = {
         // Моя вставка render wall
         const wallCellKey = `x${wallPoint.x}_y${wallPoint.y}`;
         const wallCell = this.cells[wallCellKey];
-
         wallCell.classList.add('wall');
-
         this.usedCells.push(wallCell);
     },
 };
@@ -138,7 +136,7 @@ const food = {
     },
 };
 
-// Моя вставкаWall object 
+// Моя вставка Wall object 
 const wall = {
     x: null,
     y: null,
@@ -323,8 +321,8 @@ const game = {
     },
 
     getRandomFreeCoordinates() {
+        // Моя вставка
         const exclude = [this.food.getCoordinates(), this.wall.getCoordinates(), ...this.snake.getBody()];
-
         while (true) {
             const rndPoint = {
                 x: Math.floor(Math.random() * this.config.getColsCount()),
