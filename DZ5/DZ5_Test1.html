@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .cell {
+            height: 100px;
+            width: 100px;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+            text-align: center;
+            font-size: 48px;
+            box-sizing: content-box;
+            display: inline-block;
+            vertical-align: 0px;
+        }
+
+        .border {
+            border: 1px solid black;
+        }
+
+        .blackbg {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function renderDeck() {
+            desk = document.createElement('div');
+            black = true;
+            for (let i = 0; i < 9; i++) {
+                const row = document.createElement('div');
+                for (j = 0; j < 9; j++) {
+                    cell = document.createElement('span');
+                    cell.classList.add('cell');
+                    if (i > 0 && j > 0) { cell.classList.add('border') }
+                    if (i < 1 && j > 0)
+                        cell.innerText = String.fromCharCode(65 + j - 1)
+                    else cell.innerHTML = '&nbsp;'
+                    if (i > 0 && j > 0 && black) cell.classList.add('blackbg');
+                    if (j === 0 && i > 0) { cell.innerText = String.fromCharCode(57 - i) }
+                    row.appendChild(cell);
+                    black = !black;
+                }
+                desk.appendChild(row);
+            }
+            document.body.appendChild(desk)
+        }
+        renderDeck()
+    </script>
+</body>
+
+</html>
